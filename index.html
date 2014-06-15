@@ -6,90 +6,30 @@
     <title>GFD-Net</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
     <script src="javascripts/collapse.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <!--[endif]-->
   </head>
-  <body>
-    <div class="wrapper">
-      <header>GFD-Net
-	  	<a class="go-top" href="#" title="Back to Top"><img src="images/arrow-down.png"/></a>
+	<body>
+    	<header>
+			<img id="logo" src="images/GFDNetLogo.png" alt="GFD-Net">   
 		</header>
-	  <div id="container">
-        <p class="container">Cytoscape app for visualizing and analyzing the functional similarity of gene networks</p>
 
-        <ul>
-			<div class = "dropDownWrapper closed">
-			  <li> <a class="buttons download">Download </a></li>
-			  <div class = "dropDownList">
-				<ul>
-				  <li class="dropDownElement"><a class="dropDownButton" href="https://github.com/nbidiaz/GFD-Net/raw/master/App_(v3.x)/GFDNET.jar">App (v. 3.x)</a></li>
-				  <li class="dropDownElement"><a class="dropDownButton" href="https://github.com/nbidiaz/GFD-Net/raw/master/Plugin_(v2.x)/GFDNET.jar">Plugin (v. 2.x)</a></li>
-				  <li class="dropDownElement"><a class="dropDownButton" href="https://github.com/nbidiaz/GFD-Net/raw/master/User%20Manual/User%20Manual.pdf">User Manual</a></li>
-				</ul>
-			  </div>
-			</div>
-          <li><a class="buttons github" href="https://github.com/nbidiaz/GFD-Net">View On GitHub</a></li>
-        </ul>
-	</div>
+		<section>
 
-      <section>
-        <h3>What is GFD-Net</h3>
+        <h1>Cytoscape app for visualizing and analyzing the functional similarity of gene networks</h1>
 
-<p>GFD-Net is a Cytoscape app designed to visualize and analyze the functional dissimilarity of gene networks. GFD-Net can analyze a gene network based on Gene Ontology (GO) and calculate a quantitative measure of its functional dissimilarity, i.e. a quantitative value of the degree of dissimilarity between the connected genes in it.</p>
+        <p class="big">We have moved to <a href="http://juanjodiaz.github.io/gfdnet/">http://juanjodiaz.github.io/gfdnet/</a>.</p>
 
-<h3>What else</h3>
+        <p>Sorry for the inconvenience.</p>
 
-<p>After the analysis, users can visualize the information retrieved from GO.</p>
-<ul>
-	<li>For each gene the user can see its associated GO terms and its function (specified by a GO term) chosen as the most cohesive function in the set.</li>
-	<li>For each edge the user can see the genes at its ends, the function chosen as the most cohesive function in the set for each one and the dissimilarity between them.</li>
-</ul>
-
-<center><img src="images/ResultPanel.png" alt="ResultPanel"></center>
-
-<h3>How the algorithm works</h3>
-
-<p>GFD-Net is based on an adaptation of the GFD approach presented in <a href="http://www.biomedcentral.com/1471-2105/12/360">Díaz Díaz and Aguilar Ruiz, 2011</a> which uses the prior biological knowledge contained in GO to establish the quality of of gene sets. In this type of measure, it is considered that absolutely all the genes are related to each other disregarding the possibly that some of them may be related while others may be not. On the other hand, GFD-Net takes into account only the genes directly
-related to each other i.e. connected by an edge.</p>
-
-<p>The analysis is performed in three steps (click on them to read more):</p>
-<ul>
-<li><span id="step1" class="stepTittle">Scan all nodes using the GFD approximation</span>
-<p class="step1 stepText closed">First, it is assumed that all the genes on the same network are involved in the same biological process. This means that these genes may have different functions, but they have been put together on the same network because they are somehow related in a biological sense (Biological Process, Molecular Function, Cellular Component). Based on this assumption, each gene is analyzed using GFD in order to find what is the most cohesive function for a concrete ontology. Each GO-Term associated to a gene is considered as a representation of it and the most common and specific representation(representing a function) of each gene is taken.</p></li>
-<li><span id="step2" class="stepTittle">Use the additional information provided by networks, the gene-gene interaction</span>
-<p class="step2 stepText closed">These representations are used to calculate the Gene-Representation Functional Dissimilarity of each pair of genes directly related to each other (see <a href="http://www.biomedcentral.com/1471-2105/12/360">Díaz Díaz and Aguilar Ruiz, 2011</a>, Gene-Representation Funcional Dissimilarity subsection, for more details). This way the additional information provided by networks, the gene-gene interaction is exploited.</p></li>
-<li><span id="step3" class="stepTittle">Evaluate the network</span>
-<p class="step3 stepText closed">GFD-Net measure is calculated by the average of the dissimilarity
-values calculated in the previous step for each pair of genes directly related,
-resulting in the functional dissimilarity of the input network for the selected
-ontology.</p></li>
-</ul> 
-
-<p>It should be taken into consideration that GFD-Net is oriented to connect networks where most of the genes are contained in the ontology being used. This is because all the genes that cannot be found are removed from the network and the dissimilarity between disconnected nodes is not calculated. The more genes that are removed or pairs that are disconnected, the less reliable the results will be.</p>
-
-<h3>How to use it</h3>
-
-<p>All the information about installation and use of GFD-Net can be found in the User Manual using the Downlaod button or clicking <a href="https://github.com/nbidiaz/GFD-Net/blob/master/User%20Manual.pdf?raw=true">here</a></p>
-
-<h3>Authors and Contributors</h3>
-
-<p>Norberto Díaz Díaz (<a href="https://github.com/nbidiaz" class="user-mention">@nbidiaz</a>), Juan José Díaz Montaña (<a href="https://github.com/juanjoDiaz" class="user-mention">@juanjoDiaz</a>), Isabel A Nepomuceno-Chamorro and Francisco A. Gómez Vela (<a href="https://github.com/fgomezvela" class="user-mention">@fgomezvela</a>)</p>
-
-<h3>Support or Contact</h3>
-
-<p>In case of having any trouble with the app, check out the User Manual. If your problem is not solved you can contact <a href="mailto:ndiaz@upo.es">ndiaz@upo.es</a> and we'll try to help you as soon as possible.</p>
 
       </section>
       <footer>
-        <p><small>This project is maintained by <a class="container name" href="https://github.com/nbidiaz">nbidiaz</a> and <a class="container name" href="https://github.com/juanjoDiaz">juanjoDiaz</a></small></p>
+        <p>This project is maintained by <a href="https://github.com/nbidiaz">nbidiaz</a> and <a href="https://github.com/juanjoDiaz">juanjoDiaz</a></p>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+    </div>	
   </body>
 </html>
